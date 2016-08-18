@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class NasaCountdown {
 	public static void main(String[] args) {
 		// 2. ask the user when to start (JOptionPane.showInputDialog)
-		String number = JOptionPane.showInputDialog(null, "Form what number wouyld you like to start form?");
+		String number = JOptionPane.showInputDialog(null, "Form what number would you like to start form?");
 		// 3. convert the user's answer to an int (Integer.parseInt)}
 		int o = Integer.parseInt( number);
 		// 4. countdown from user's starting point
