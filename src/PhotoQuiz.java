@@ -65,7 +65,6 @@ G = createImage(Grap);
 quizWindow.add(G);
 // 12. pack the quiz window
 quizWindow.pack();
-G.addMouseMotionListener(null);
 String ans3 = JOptionPane.showInputDialog("What Color is this?");
 if (ans3.toLowerCase().equals("purple")) {
 JOptionPane.showMessageDialog(null, "Correct");
