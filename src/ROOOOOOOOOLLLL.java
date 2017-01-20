@@ -10,7 +10,7 @@ public class ROOOOOOOOOLLLL implements ActionListener {
 	JFrame frame = new JFrame();
 	JPanel pan =  new JPanel();
 	JButton but = new JButton("Roll Dice");
-	int number = null;
+	int number;
 public static void main(String[] args) {
 	ROOOOOOOOOLLLL g = new ROOOOOOOOOLLLL();
     g.setup();
