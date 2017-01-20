@@ -6,6 +6,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -136,6 +137,11 @@ public class SimplePainter extends JPanel implements MouseListener, KeyListener 
 			changeDotColor(Color.green);
 		}if(e.getKeyCode()==KeyEvent.VK_2){
 			changeDotColor(Color.BLACK.LIGHT_GRAY);
+		}
+		
+		if(e.getKeyCode()==KeyEvent.VK_3){
+			int colorchance = new Random().nextInt(3);
+			
 		}
 	}
 
