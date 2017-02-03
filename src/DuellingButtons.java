@@ -38,6 +38,7 @@ panel.add(leftButton);
 panel.add(rightButton);
 		// 9. Pack the frame
 frame.pack();
+
 		// 10. Set the title of the frame to "Demanding Buttons"
 
 	}
