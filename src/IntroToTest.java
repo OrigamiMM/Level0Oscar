@@ -27,10 +27,5 @@ int squareNum(int x){
 int absoluteValue(int x){
 return Math.abs(x);
 }
-String giveGreeting(String name){
-	if(name.equals("Carl")){
-		return "Hello Carl";
-	}
-	return name;
 }
-}
+
