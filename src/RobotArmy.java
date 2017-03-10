@@ -47,7 +47,7 @@ class Human {
 /**
  * Robot Class
  */
-class Robot {
+//class Robot {
 	boolean isEvil;
 	String name;
 	
