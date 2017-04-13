@@ -23,7 +23,7 @@ void updateMenuState(){
 }
 void updateGameState(){
 	ship.update();
-
+	ship.draw(g);
 }
 void updateEndState(){
 	
