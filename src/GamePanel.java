@@ -17,6 +17,7 @@ final int END_STATE = 2;
 int currentState = MENU_STATE;
 Font tFont = new Font("Arial", Font.PLAIN, 48);
 RocketShip ship = new RocketShip(250,700,50,50,5);
+ObjectManager manager = new ObjectManager();
 
 void updateMenuState(){
 	
