@@ -16,14 +16,13 @@ final int GAME_STATE = 1;
 final int END_STATE = 2;
 int currentState = MENU_STATE;
 Font tFont = new Font("Arial", Font.PLAIN, 48);
-RocketShip ship = new RocketShip(250,700,50,50);
+RocketShip ship = new RocketShip(250,700,50,50,5);
 
 void updateMenuState(){
 	
 }
 void updateGameState(){
 	ship.update();
-	ship.draw(g);
 }
 void updateEndState(){
 	
@@ -38,6 +37,7 @@ void drawMenuState(Graphics g){
 void drawGameState(Graphics g){
 	g.setColor(Color.BLACK.darker());
 	g.fillRect(0, 0, 500, 800);
+	ship.draw(g);
 }
 void drawEndState(Graphics g){
 	g.setColor(Color.RED);
@@ -76,6 +76,7 @@ public void paintComponent(Graphics g){
 public void keyTyped(KeyEvent e) {
 	// TODO Auto-generated method stub
 	System.out.println("something");
+	
 }
 @Override
 public void keyPressed(KeyEvent e) {
@@ -89,10 +90,29 @@ public void keyPressed(KeyEvent e) {
 	}else if(currentState == GAME_STATE){
 		currentState = END_STATE;
 	}}
+	if(e.getKeyCode()==KeyEvent.VK_LEFT){
+		ship.left=true;
+	}if(e.getKeyCode()==KeyEvent.VK_RIGHT){
+		ship.right=true;
+	}if(e.getKeyCode()==KeyEvent.VK_UP){
+		ship.up=true;
+	}if(e.getKeyCode()==KeyEvent.VK_DOWN){
+		ship.down=true;
+	}
 }
 @Override
 public void keyReleased(KeyEvent e) {
 	// TODO Auto-generated method stub
 	System.out.println("something2");
+	if(e.getKeyCode()==KeyEvent.VK_LEFT){
+		ship.left=false;
+	}if(e.getKeyCode()==KeyEvent.VK_RIGHT){
+		ship.right=false;
+	}if(e.getKeyCode()==KeyEvent.VK_UP){
+		ship.up=false;
+	}if(e.getKeyCode()==KeyEvent.VK_DOWN){
+		ship.down=false;
+	}
+	}
 }
-}
+
