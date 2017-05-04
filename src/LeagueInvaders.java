@@ -1,9 +1,14 @@
 import javax.swing.JFrame;
 
 public class LeagueInvaders {
+	
+	LeagueInvaders(){
+		jfram = new JFrame();
+		
+	}
 	final int w = 500;
 	final int h = 800;
-	JFrame jfram = new JFrame();
+	JFrame jfram;
 	GamePanel obj = new GamePanel();
 public static void main(String[] args) {
 	LeagueInvaders L = new LeagueInvaders();
