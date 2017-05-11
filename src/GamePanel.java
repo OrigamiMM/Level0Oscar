@@ -32,6 +32,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void updateGameState() {
 		manager.update();
+		manager.manageEnemies();
+		manager.checkCollision();
+		if (ship.isAlive == false) {
+			currentState = END_STATE;
+		}
+	manager.getScore();
 	}
 
 	void updateEndState() {
@@ -120,8 +126,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			ship.down = true;
-		}if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			manager.addObject(new Projectile(ship.x+20, ship.y, 10,10));
+		}
+		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+			manager.addObject(new Projectile(ship.x + 20, ship.y, 10, 10));
 		}
 	}
 
