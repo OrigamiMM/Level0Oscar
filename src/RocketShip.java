@@ -21,6 +21,18 @@ super.update();
 	if(up){
 	y-=Speed;
 }
+if(x<10){
+	x=10;
+}
+if(x>450){
+	x= 450;
+}
+if(y<400){
+	y=400;
+}
+if(y>725){
+	y=725;
+}
 if(down){
 	y+=Speed;
 }if(left){
@@ -30,8 +42,7 @@ if(down){
 }
 }
 void draw(Graphics g){
-	g.setColor(Color.WHITE);
-	g.fillRect(x, y, width, height);
+	g.drawImage(GamePanel.rocketImg,x,y,width,height,null);
 
 }
 }

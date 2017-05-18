@@ -5,7 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -15,10 +18,22 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		time = new Timer(1000 / 60, this);
 		manager.addObject(ship);
 		tFont = new Font("Arial", Font.PLAIN, 48);
+		try {
+			alienImg = ImageIO.read(this.getClass().getResourceAsStream("alien.png"));
+			rocketImg = ImageIO.read(this.getClass().getResourceAsStream("rocket.png"));
+			bulletImg = ImageIO.read(this.getClass().getResourceAsStream("bullet.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 	Timer time;
 	Font tFont;
+	public static BufferedImage alienImg;
+	public static BufferedImage rocketImg;
+	public static BufferedImage bulletImg; 
 	final int MENU_STATE = 0;
 	final int GAME_STATE = 1;
 	final int END_STATE = 2;
@@ -34,8 +49,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		manager.update();
 		manager.manageEnemies();
 		manager.checkCollision();
-		if (ship.isAlive == false) {
+			if (ship.isAlive == false) {
 			currentState = END_STATE;
+			manager.reset();
+			ship = new RocketShip(250, 700,50,50,5);
+			manager.addObject(ship);
 		}
 	manager.getScore();
 	}
@@ -53,7 +71,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	void drawGameState(Graphics g) {
-		g.setColor(Color.BLACK.darker());
+		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, 500, 800);
 		manager.draw(g);
 	}
@@ -128,7 +146,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			ship.down = true;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			manager.addObject(new Projectile(ship.x + 20, ship.y, 10, 10));
+			manager.addObject(new Projectile(ship.x + 5, ship.y, 10, 10));
+			manager.addObject(new Projectile(ship.x + 35, ship.y, 10, 10));
+
 		}
 	}
 
