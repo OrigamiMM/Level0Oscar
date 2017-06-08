@@ -4,13 +4,13 @@ import javax.swing.JPanel;
 public class TronReboot {
 	TronReboot() {
 		frame = new JFrame();
-		Jpan = new JPanel();
+		Jpan = new TronPanel();
 		setup();
 	}
 
 	final int width = 800;
 	final int height = 800;
-	JPanel Jpan;
+	TronPanel Jpan;
 	JFrame frame;
 
 	public static void main(String[] args) {
@@ -23,5 +23,7 @@ public class TronReboot {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(width, height);
 		frame.setVisible(true);
+		frame.addKeyListener(Jpan);
+		Jpan.StartGame();
 	}
 }
