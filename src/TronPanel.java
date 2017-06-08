@@ -41,6 +41,7 @@ titleFont = new Font("Arial",Font.PLAIN,48);
 	void drawMenuState(Graphics g) {
 		g.setFont(titleFont); 
 		g.drawString("TRON REBITH", 400, 300);
+		g.setColor(Color.ORANGE);
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 800, 800);
 	}
